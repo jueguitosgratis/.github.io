@@ -1,0 +1,174 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  body {
+    font-family: sans-serif;
+    background-color: white; /* fondo blanco debajo de la imagen */
+    color: white;
+    overflow-x: hidden;
+  }
+  
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #ffffffcc;
+    color: black;
+    padding: 10px 20px;
+    border-bottom-left-radius: 30px;
+    border-bottom-right-radius: 30px;
+    position: fixed;
+    width: 100%;
+    z-index: 10;
+  }
+  
+  .logo {
+    font-weight: bold;
+    font-size: 1.2rem;
+  }
+  
+  .menu-icon {
+    font-size: 1.5rem;
+    cursor: pointer;
+  }
+  
+  /* Imagen de fondo con filtro */
+  .fondo {
+    position: relative;
+    background: url('fondo.jpeg') no-repeat center center/cover;
+    height: 500px;
+    width: 100%;
+    z-index: 1;
+  }
+  
+  /* Capa oscura sobre la imagen */
+  .fondo::after {
+    content: '';
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* filtro oscuro */
+    z-index: 2;
+  }
+  
+  .contenedor-juegos {
+    padding: 40px 20px;
+    margin-top: -100px; /* para que suba cerca del fondo */
+    position: relative;
+    z-index: 3;
+  }
+  
+  .buscador {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px;
+    position: relative;
+    z-index: 3;
+  }
+  
+  .buscador input {
+    padding: 10px;
+    width: 300px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+  }
+  
+  .juegos-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 20px;
+    justify-items: center;
+    position: relative;
+    z-index: 3;
+  }
+  
+  .juego {
+      background: rgba(128, 128, 128, 0.1); /* mismo fondo translúcido */
+      color: white; /* o el color que prefieras */
+      padding: 12px 24px;
+      border-radius: 16px;
+      backdrop-filter: blur(10px); /* igual que la barra */
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3); /* igual que la barra */
+      font-size: 1rem;
+      text-decoration: none;
+      transition: transform 0.2s ease;
+      border: 1px solid rgba(255, 255, 255, 0.1); /* opcional, para que se vea más como vidrio */
+    }
+  
+  
+  
+  
+  
+  .juego:hover {
+    transform: scale(1.2);
+  }
+  
+  .juego img {
+    width: 100%;
+    border-radius: 8px;
+    margin-bottom: 8px;
+    height: 120px;
+    object-fit: cover;
+  }
+  
+  .juego p {
+    margin-top: 4px;
+    font-size: 0.9rem;
+    color: black;
+  }
+  
+  .fondo-juego {
+      position: relative;
+      background: no-repeat center center/cover;
+      height: 100vh;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 1;
+    }
+    
+    .fondo-juego::after {
+      content: '';
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.5); /* filtro gris oscuro */
+      z-index: 2;
+    }
+    
+    .contenido-descarga {
+      position: relative;
+      z-index: 3;
+      text-align: center;
+    }
+    
+    .titulo-juego {
+      font-size: 2.5rem;
+      margin-bottom: 20px;
+      color: white;
+    }
+    
+    .boton-descarga {
+      background: #ffffffcc; /* Mismo fondo translúcido que la barra de navegación */
+      color: rgb(0, 0, 0);
+      padding: 10px 20px;
+      border-radius: 16px;
+      border: none;
+      font-size: 1rem;
+      backdrop-filter: blur(4px); /* si quieres más estilo tipo vidrio */
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+      cursor: pointer;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    .boton-descarga:hover {
+      transform: scale(1.05);
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
+    }
+    

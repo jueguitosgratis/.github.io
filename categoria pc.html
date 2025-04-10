@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Juegos</title>
+  <link rel="stylesheet" href="estilo de categorias/estilos.css" />
+</head>
+<body>
+  <header>
+    <div class="logo">🎮 PC</div>
+    <div class="menu-icon">☰</div>
+  </header>
+
+  <div class="fondo"></div>
+
+  <main class="contenedor-juegos">
+    <div class="buscador">
+      <input type="text" id="buscador" placeholder="Buscar juego...">
+    </div>
+    
+
+    <div class="juegos-grid">
+      <a class="juego" href="juegos de pc/cuphead.html">
+        <img src="juegos de pc/fondos/R.jpg" alt="Cuphead" />
+        <p>Cuphead</p>
+      </a>
+      <a class="juego" href="gta-sa.html">
+        <img src="juegos de pc/fondos/hollo knight.png" alt="Hollow Knight" />
+        <p>Hollow Knight</p>
+      </a>
+      
+
+      <!-- Agrega más juegos aquí -->
+    </div>
+  </main>
+
+
+  <script>
+    const buscadorInput = document.getElementById('buscador');
+    const juegos = document.querySelectorAll('.juego');
+  
+    buscadorInput.addEventListener('input', () => {
+      const texto = buscadorInput.value.toLowerCase();
+      
+      juegos.forEach(juego => {
+        const nombre = juego.querySelector('p').textContent.toLowerCase();
+        if (nombre.includes(texto)) {
+          juego.style.display = 'block';
+        } else {
+          juego.style.display = 'none';
+        }
+      });
+    });
+  </script>
+  
+</body>
+</html>
