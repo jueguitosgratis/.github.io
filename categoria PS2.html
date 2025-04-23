@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PS2</title>
+  <link rel="stylesheet" href="estilo de categorias/estilos.css" />
+</head>
+<body>
+  <header>
+    <div class="logo">🎮 PC</div>
+    <div class="menu-icon">☰</div>
+  </header>
+
+  <div class="fondo"></div>
+
+  <main class="contenedor-juegos">
+    <div class="buscador">
+      <input type="text" id="buscador" placeholder="Buscar juego...">
+    </div>
+    
+
+    <div class="juegos-grid">
+      <a class="juego" href="juegos de ps2/God Of War 1.html">
+        <img src="juegos de ps2/fondos/God Of War 1.jpg" alt="God Of War" />
+        <p>God Of War</p>
+      </a>
+      <a class="juego" href="juegos de ps2/Ico.html">
+        <img src="juegos de ps2/fondos/Ico.jpg" alt="Ico" />
+        <p>Ico</p>
+      </a>
+
+      <a class="juego" href="juegos de ps2/Sonic Riders.html">
+        <img src="juegos de ps2/fondos/Sonic Riders.jpg" alt="Sonic Riders" />
+        <p>Sonic Riders</p>
+      </a>
+
+      <a class="juego" href="juegos de ps2/Sonic Riders Zero Gravity.html">
+        <img src="juegos de ps2/fondos/Sonic Riders Zero Gravity.jpg" alt="Sonic Riders Zero Gravity" />
+        <p>Sonic Riders</p>
+        <p>Zero Gravity</p>
+      </a>
+      
+      <a class="juego" href="juegos de ps2/Final Fantasy XIII.html">
+        <img src="juegos de ps2/fondos/Fiinal Fantasy XII.jpg" alt="Final Fantasy XIII" />
+        <p>Final Fantasy</p>
+        <p>XIII</p>
+      </a>
+      <!-- Agrega más juegos aquí -->
+    </div>
+  </main>
+
+
+  <script>
+    const buscadorInput = document.getElementById('buscador');
+    const juegos = document.querySelectorAll('.juego');
+  
+    buscadorInput.addEventListener('input', () => {
+      const texto = buscadorInput.value.toLowerCase();
+      
+      juegos.forEach(juego => {
+        const nombre = juego.querySelector('p').textContent.toLowerCase();
+        if (nombre.includes(texto)) {
+          juego.style.display = 'block';
+        } else {
+          juego.style.display = 'none';
+        }
+      });
+    });
+  </script>
+  
+</body>
+</html>
